@@ -1,0 +1,45 @@
+金属前驱体名称,金属分子式,有机配体名称,有机配体分子式,配体简称,溶剂名称,溶剂分子式,添加剂名称,添加剂化学式,水热法/溶剂热法,微波法,超声法,搅拌合成法,precipitation
+Scandium nitrate,Sc(NO3)3·3H2O,terephthalic acid,C8H6O4,BDC,Water,H2O,acetic acid,CH?COOH,hydrothermal,microwave method,ultrasonic method,stir,electrochemical method
+titanium isopropoxide,Ti(OC3H7)4,trimesic acid,C9H6O6,BTC,"N,N-dimethylformamide",DMF,hydrochloric acid,HCl,solvethermal method,microwave reactor,kHz,rpm,spray-drying method
+Tetrabutyl titanate,Ti(OC4H9)4,Hydroxyterephthalic acid,C8H6O5,HTPA,Ethanol,EtOH,Sodium acetate,CH3COONa,Hydrothermal kettle,,,,mechanochemistry
+Vanadium(III) chloride/Vanadium chloride,VCl3,"2,5-Dihydroxyterephthalic acid",C8H6O6,DHTA,Methanol,MeOH,Sodium acetate trihydrate,CH3COONa?3H2O,Teflon-lined,,,,template
+Chromic nitrate,Cr(NO3)3·9H2O,Chloroterephthalic acid,C8H5O4Cl,BDC-Cl,Isopropyl alcohol,iPrOH,triethylamine,C6H15N,PTFE,,,,sonochemical
+Chromium(III) chloride/Chromium chloride,CrCl3,2-Methylimidazole,C4H6N2,mIM,Acetonitrile,MeCN,"DMF/N,N-dimethylformamide",C3H7NO,polytetrafluoroethylene,,,,atomic layer deposition
+Manganese nitrate,Mn(NO3)2,2-Ethylimidazole,C5H8N2,eIM,Acetone,Acetone,benzoic acid,C6H5COOH,,,,,ionothermal
+Manganese(II) chloride/Manganese chloride,MnCl2,2-Phenylimidazole,C9H8N2,,Dimethyl sulfoxide,DMSO,ammonium hydroxide,NH3?H2O,,,,,spray dryer
+Ferric chloride,FeCl3·H2O,"5,10,15,20-Tetra(4-carboxyphenyl)porphyrin",C48H30N4O8,TCPP,"N,N-Dimethylacetamide",DMA,Sodium formate,HCOONa,,,,,sol gel
+Iron nitrate,Fe(NO3)3·9H2O,4-Pyrid-4-ylbenzoic acid,C12H9NO2,,"N,N-Dimethylformamide Dimethyl Acetal",DFA,"DEF/N,N-diethylformamide",C5H11NO,,,,,supercritical
+Cobalt chloride,CoCl2,2-bromoterephthalicacid,C8H5BrO4,BBDC,"N,N-Diethylformamide",DEF,NMP/N-methyl pyrrolidone,C5H9NO,,,,,flow chemistry
+cobalt(II) nitrate/cobalt nitrate,Co(NO3)2,"2,4,6-Tri(2-pyridyl)-s-triazine",C18H12N6,TPTZ,Nicotinamide,NA,,,,,,,
+Nickel(II) nitrate/Nickel nitrate,Ni(NO3)2?6H2O,"Biphenyl-3,3',5,5'-tetracarboxylic acid",C16H10O8,BPTC,,,,,,,,,
+Nickel(II) chloride/Nickel chloride,NiCl2,"Benzene-1,2,4,5-tetracarboxylic acid",C10H6O8,BTEC,,,,,,,,,
+Cupric nitrate,Cu(NO3)2,"1,3,5-Tri(4-carboxyphenyl)benzene",C27H18O6,BTB,,,,,,,,,
+Cupric chloride,CuCl2,"4,4'-Biphenyldicarboxylic acid",C14H10O4,BPDC,,,,,,,,,
+Zinc Chloride,ZnCl2,Nitroterephthalic acid,C14H10O4,NTA,,,,,,,,,
+Zinc acetate,Zn(CH3COO)2,"3,3'-Bipyridine",C10H8N2,,,,,,,,,,
+Zirconium tetrachloride,ZrCl4,"4,4'-Bipyrimidine",C8H6N4,"4,4'-bpm",,,,,,,,,
+Zirconium (IV) oxynitrate,ZrO(NO3)2,"1,2-Di(pyridin-4-yl)ethyne",C12H8N2,BPA,,,,,,,,,
+Zirconyl chloride,ZrOCl2,"4,4'-Dipyridylamine",C10H9N3,,,,,,,,,,
+Aluminum nitrate,Al(NO3)3,"5,5'-Bipyrimidine",C8H6N4,"5,5'-bpm",,,,,,,,,
+Aluminum chloride,AlCl3,"1,3-Bis(4-Pyridyl)Benzene",C16H12N2,BPyB,,,,,,,,,
+Aluminum sulfate,Al2(SO3)3,3-(3-Aminophenoxy)Trimethoxysilane,C21H15N3,,,,,,,,,,
+Hafnium chloride,HfCl4,"5'-(3,5-dicarboxyphenyl)-[1,1':3',1''-terphenyl]-3,3'',5,5''-tetracarboxylicacid",C30H18O12,,,,,,,,,,
+Ammonium Cerium(IV) nitrate,(NH4)2Ce(NO3)6,Methylterephthalic acid,C9H8O4,,,,,,,,,,
+Palladium acetate,Pd(OAc)2,"2,5-Dicarboxyaniline",C8H7NO4,,,,,,,,,,
+Europium(III)nitrate,Eu(NO3)3,2-aminoterephthalic acid,C8H7NO4,ATA,,,,,,,,,
+Lanthanum nitrate,La(NO3)3,"3,3',5,5'-Azobenzenetetracarboxylic acid",C16H10N2O8,ABTC,,,,,,,,,
+Yttrium(III) nitrate,Y(NO3)3,,,,,,,,,,,,
+Terbium nitrate,Tb(NO3)3,,,,,,,,,,,,
+Cerium (III) nitrate,Ce(NO3)3,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
+"													",,,,,,,,,,,,,
