@@ -19,4 +19,12 @@ p2t <file1> <file2> ...
 
 ![image-20220504154144873](https://gitee.com/sun__ye/gallery/raw/master/g1121/202205041541083.png)
 
-大概3s执行一个pdf，更多样例在`/mnt/data1/mof_papers`下，有5k多篇pdf
+大概3s执行一个pdf，更多样例在`/mnt/data1/mof_papers`下，有5k多篇pdf，及其相应的html和txt
+
+## 上传
+
+将两个文件拷贝到公共目录即可
+```
+cp p2t.sh /mnt/data2/share/script/
+cp convert.js /mnt/data2/share/static/
+```
