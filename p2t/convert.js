@@ -109,24 +109,11 @@ for (let i = 0; i < divCollection.length; i++) {
         node = leafNode[leafNode.length-1]
         s = node.nodeValue
         if(s.endsWith('-')) node.nodeValue = s.substring(0, s.length-1)
-        else if (s.endsWith('.')) node.nodeValue = s + "\\rn\\"
+        else if (s.endsWith('.')) node.nodeValue = s + "\n"
         else node.nodeValue = s + " "
         lastNode = node
     }
 }
-
-// var divCollection = document.getElementsByTagName("div")
-// for (let i = 0; i < divCollection.length; i++) {
-//     let node = divCollection[i]
-//     let leafNode = traverseNodes(node, [])
-//     if (leafNode.length > 0) {
-//         // node = leafNode[leafNode.length-1]
-//         console.log(leafNode[0])
-//         console.log(leafNode[leafNode.length-1])
-//     }
-// }
-
-
 
 const header = "<!DOCTYPE html>\n";
 const footer = ''
@@ -139,21 +126,6 @@ fs.writeFileSync(
     }
   }
 );
-
-var text = document.body.textContent.trim()
-var tmp = "\n==========page 1==========\n"
-var index = 2
-for (let i = 0; i < text.length; i++) {
-    if (text[i] == "\n") {
-        tmp += "\n==========page " + index + "==========\n"
-        index += 1
-    } else {
-        tmp += text[i]
-    }
-}
-// text.replace(/\n/g, "\n==========page==========\n")
-text = tmp.replace(/\\rn\\/g, "\n")
-
 
 fs.writeFileSync(txtDest, text, (err) => {
   if (err) {
