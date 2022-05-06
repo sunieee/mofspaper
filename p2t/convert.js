@@ -1,7 +1,7 @@
 const src = process.argv[2];
 
-var filename = src.substring(src.lastIndexOf('/')+1);
-var txtDest = filename.replace(".html", ".txt")
+let filename = src.substring(src.lastIndexOf('/')+1);
+let txtDest = filename.replace(".html", ".txt")
 
 const { assert } = require("console");
 const fs = require("fs");
@@ -11,8 +11,8 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 const dom = new JSDOM(content);
-var document = dom.window.document;
-var iterator = document.createNodeIterator(
+let document = dom.window.document;
+let iterator = document.createNodeIterator(
   document.getElementById("page-container"),
   0x1, // NodeFilter.SHOW_ELEMENT
   {
@@ -23,6 +23,7 @@ var iterator = document.createNodeIterator(
     },
   }
 );
+
 let currentNode;
 while ((currentNode = iterator.nextNode())) {
   if (
@@ -36,17 +37,31 @@ while ((currentNode = iterator.nextNode())) {
   } 
 }
 
+// function queryList(json, arr) {
+//     for (let i = 0; i < json.length; i++) {
+//         let sonList = json[i].sonList;
+//         if (sonList.length == 0) {
+//             arr.push(json[i]);
+//         } else {
+//             queryList(sonList, arr);
+//         }
+//     }
+//     return arr;
+// }
+// leafNode = queryList(document.sonList, [])
+
+// leafNode = []
 function traverseNodes(node, leafNode){
     if(node.nodeType == 1){
         // 元素节点
         // leafNode.push(node);
         // assert(node.hasChildNodes)
         //得到所有的子节点
-        var sonnodes = node.childNodes;
+        let sonnodes = node.childNodes;
         //遍历所哟的子节点
-        for (var i = 0; i < sonnodes.length; i++) {
+        for (let i = 0; i < sonnodes.length; i++) {
             //得到具体的某个子节点
-            var sonnode = sonnodes.item(i);
+            let sonnode = sonnodes.item(i);
             //递归遍历
             traverseNodes(sonnode, leafNode);
         }
@@ -58,10 +73,17 @@ function traverseNodes(node, leafNode){
     return leafNode
 }
 
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+function replaceAll(str, match, replacement){
+   return str.replace(new RegExp(escapeRegExp(match), 'g'), ()=>replacement);
+}
+
 function printStyle(element) {
-    var out = "";
-    var elementStyle = element.style;
-    var computedStyle = window.getComputedStyle(element, null);
+    let out = "";
+    let elementStyle = element.style;
+    let computedStyle = window.getComputedStyle(element, null);
 
     for (prop in elementStyle) {
     if (elementStyle.hasOwnProperty(prop)) {
@@ -71,34 +93,31 @@ function printStyle(element) {
     console.log(out)
 }
 
-var emptyCollection = document.getElementsByClassName("_")
+console.log("removing _")
+let emptyCollection = document.getElementsByClassName("_")
 for (let i = 0; i < emptyCollection.length; i++) {
     let node = emptyCollection[i]
-    if (node.className == "_") {
-        node.parentNode.removeChild(node);
+    // if (node.className == "_") {
+    //     node.parentNode.removeChild(node);
+    // } else {
+    // printStyle(node)
+    // console.log(node, node.offsetWidth)
+    w = node.offsetWidth
+    if(w === undefined || w < 5) {
+        // 间隙过小则直接为空
+        node.nodeValue = ""
+        // node.parentNode.removeChild(node);
     } else {
-        // printStyle(node)
-        // console.log(node, node.offsetWidth)
-        w = node.offsetWidth
-        if(w === undefined || w < 5) {
-            // 间隙过小则直接为空
-            node.nodeValue = ""
-            // node.parentNode.removeChild(node);
-        } else {
-            node.nodeValue = " "
-        }
+        node.nodeValue = " "
     }
 }
 
-var divCollection = document.getElementsByTagName("div")
-let lastNode
+console.log("removing -, adding <return> at line end")
+let divCollection = document.getElementsByTagName("div")
 for (let i = 0; i < divCollection.length; i++) {
     let node = divCollection[i]
     let leafNode = traverseNodes(node, [])
-    if (leafNode.length == 0) {
-        // node.parentNode.removeChild(node)
-        console.log(node)
-    } else{
+    if (leafNode.length > 0) {
         // first
         // node = leafNode[0]
         // s = node.nodeValue
@@ -111,9 +130,26 @@ for (let i = 0; i < divCollection.length; i++) {
         if(s.endsWith('-')) node.nodeValue = s.substring(0, s.length-1)
         else if (s.endsWith('.')) node.nodeValue = s + "\n"
         else node.nodeValue = s + " "
-        lastNode = node
     }
 }
+
+console.log("adding <space> between li")
+let liSet = new Set()
+let ulCollection = document.getElementsByTagName("ul")
+for (let i = 0; i < ulCollection.length; i++) {
+    let node = ulCollection[i]
+    let leafNode = traverseNodes(node, [])
+    if (leafNode.length > 0) {
+        leafNode.forEach(ele => {
+          liSet.add(ele)
+        });
+    }
+}
+liSet.forEach(ele => {
+  ele.nodeValue = ele.nodeValue + " "
+})
+
+
 
 const header = "<!DOCTYPE html>\n";
 const footer = ''
@@ -126,6 +162,8 @@ fs.writeFileSync(
     }
   }
 );
+
+let text = document.body.textContent.trim()
 
 fs.writeFileSync(txtDest, text, (err) => {
   if (err) {
