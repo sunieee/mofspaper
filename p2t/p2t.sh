@@ -34,7 +34,7 @@ function installNode() {
 
 function installConvert() {
     print 4 "convert.js" "not found! Installing..."
-    wget http://actvis.cn/data2/share/static/convert.js -O $srcPath/convert.js
+    wget http://sunie.tpddns.cn:9052/material/mofs-paper/p2t/convert.js -O $srcPath/convert.js
     cd $srcPath
     npm install jsdom
 }
@@ -43,7 +43,7 @@ function installPdfToHtml() {
     print 4 "pdf2htmlEX" "not found! Installing..."
 
     if [ `uname` = "Linux" ];then
-        test -s /tmp/pdf2htmlEX.deb || wget https://github.com/pdf2htmlEX/pdf2htmlEX/releases/download/v0.18.8.rc1/pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb -O /tmp/pdf2htmlEX.deb
+        test -s /tmp/pdf2htmlEX.deb || wget http://sunie.tpddns.cn:9052/files/pdf2htmlEX.deb -O /tmp/pdf2htmlEX.deb
         cd /tmp
         sudo apt install ./pdf2htmlEX.deb
     else
